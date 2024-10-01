@@ -1,21 +1,20 @@
 class Solution:
     def getAncestors(self, n: int, edges):
-        visited = [False] * n
+        v = [False] * n
         t = [set() for i in range(n)]
-        res = [[] for i in range(n)]
+        data = [[] for i in range(n)]
         for i in edges:
             t[i[1]].add(i[0])
 
-
-        def dfs(cur, par):
-            visited[cur] = True
+        def f(cur, par):
+            v[cur] = True
             if cur != par:
-                res[par].append(cur)
+                data[par].append(cur)
             for i in t[cur]:
                 if not v[i]:
-                    dfs(i, par)
+                    f(i, par)
 
         for i in range(n):
-            visited = [False] * n
-            dfs(i, i)
-        return res
+            v = [False] * n
+            f(i, i)
+        return data
