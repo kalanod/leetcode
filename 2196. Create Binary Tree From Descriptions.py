@@ -38,4 +38,5 @@ class Solution(object):
         return TreeNode(i, self.createNode(self.slov[i][0]), self.createNode(self.slov[i][1]))
 
 
+print(Solution().createBinaryTree([[85,82,1],[74,85,1],[39,70,0],[82,38,1],[74,39,0],[39,13,1]]))
 print(Solution().createBinaryTree([[39,70,1],[13,39,1],[85,74,1],[74,13,1],[38,82,1],[82,85,1]]))

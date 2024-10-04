@@ -1,25 +1,7 @@
-calculated = set()
 
-
-def calculate_sum(n, k):
-    s = 0
-    for i in range(1, n + 1):
-        if i in calculated:
-            continue
-        val = f(i, k)
-        j = k
-        while i * j < n:
-            calculated.add(i * j)
-            s += val
-            j *= k
-        s += val
-    return s
-
-
-def f(a, k):
-    while a % k == 0:
-        a //= k
-    return a
-
-
-print(calculate_sum(66, 2))
+from itertools import combinations
+a = [23,2,4,6,6]
+b = list(combinations(a, 4))
+for i in b:
+    if sum(i)%7==0:
+        print(i)
